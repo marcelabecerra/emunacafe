@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y FAQ | Emuná Café & Pastelería</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> 
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+</head>
+<body>
+    <header>
+        <nav class="barra-navegacion">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/LogoEmuna-beige.webp" alt="Isologo de Emúna">
+                </a>
+            </div>
+            <ul class="enlaces-navegacion" id="nav-enlaces">
+                <li><a href="index.html" class="texto-condensado-semi-negrita">Inicio</a></li>
+                <li><a href="catalogo.html" class="texto-condensado-semi-negrita">Catálogo</a></li>
+                <li><a href="historial.html" class="texto-condensado-semi-negrita">Historial</a></li>
+                <li><a href="mapa.html" class="texto-condensado-semi-negrita">Ubicación</a></li>
+                <li><a href="contacto.html" class="texto-condensado-semi-negrita">Contacto</a></li>
+                
+                <li class="search-container" id="search-container">
+                    <input type="search" placeholder="Buscar productos..." class="search-input" id="search-input">
+                    <button class="search-button" aria-label="Buscar">
+                        <i class="fas fa-search nav-icon"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="catalogo.html" class="nav-icon" title="Carrito de Compras">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="boton-hamburguesa" id="menu-toggle" aria-label="Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="texto-condensado-negrita">¿Cómo podemos ayudarte?</h2>
+            
+            <div class="contenedor-contacto-faq">
+                <div class="columna-contacto">
+                    <h3 class="texto-condensado-semi-negrita">Escríbenos</h3>
+                    <p class="texto-condensado-regular">Completa el formulario y te responderemos a la brevedad. Puedes contactarnos para pedidos especiales o consultas.</p>
+                    
+                    <div class="formulario-contacto">
+                        <form action="#" method="POST">
+                            <div class="campo-form">
+                                <label for="nombre">Nombre Completo</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="campo-form">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="campo-form">
+                                <label for="asunto">Asunto</label>
+                                <input type="text" id="asunto" name="asunto">
+                            </div>
+                            <div class="campo-form">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                            </div>
+                            <div class="texto-centrado">
+                                <button type="submit" class="boton-cta texto-condensado-semi-negrita">
+                                    <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="columna-faq">
+                    <h3 class="texto-condensado-semi-negrita">Preguntas Frecuentes (FAQ)</h3>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary class="texto-condensado-semi-negrita"><i class="fas fa-truck"></i> ¿Hacen envíos a domicilio?</summary>
+                            <div class="faq-respuesta-contenido">
+                                <p class="texto-condensado-regular">Sí, realizamos envíos dentro de CABA con un costo adicional. También puedes optar por retirar tu pedido en nuestro local sin cargo en Av. Cramer 3302.Nuñez.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary class="texto-condensado-semi-negrita"><i class="fas fa-birthday-cake"></i> ¿Puedo encargar tortas personalizadas?</summary>
+                            <div class="faq-respuesta-contenido">
+                                <p class="texto-condensado-regular">Aceptamos pedidos especiales y tortas personalizadas con al menos 7 días de anticipación. Por favor, especifica el diseño y los sabores deseados en el formulario de contacto y nosotros nos contactaremos para ultimar detallles.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <details>
+                            <summary class="texto-condensado-semi-negrita"><i class="fas fa-parking"></i> ¿Tienen Wi-Fi o zona de trabajo?</summary>
+                            <div class="faq-respuesta-contenido">
+                                <p class="texto-condensado-regular">Sí, nuestro local está equipado con Wi-Fi de alta velocidad y contamos con mesas pensadas para trabajar. ¡Ideal para un café y una porción de torta!</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary class="texto-condensado-semi-negrita"><i class="fas fa-coffee"></i> ¿Qué tipo de café utilizan?</summary>
+                            <div class="faq-respuesta-contenido">
+                                <p class="texto-condensado-regular">Trabajamos con granos de café de especialidad de productores locales y tostadores cuidadosamente seleccionados, enfocados en blends con notas a chocolate, caramelo y frutas secas.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <details>
+                            <summary class="texto-condensado-semi-negrita">
+                                <i class="fas fa-car"></i> ¿Hay estacionamiento disponible?
+                            </summary>
+                            <div class="faq-respuesta-contenido">
+                                <p class="texto-condensado-regular">El estacionamiento es limitado en la zona. Recomendamos utilizar transporte público o aplicaciones de movilidad. Consulta la sección de **Ubicación** para ver las líneas de colectivo y tren cercanas.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary class="texto-condensado-semi-negrita">
+                                <i class="fas fa-cloud-showers-heavy"></i> ¿Se suspende por lluvia?
+                            </summary>
+                            <div class="faq-respuesta-contenido">
+                                <p class="texto-condensado-regular">El festival se celebra en la vereda y en la calle, por lo que podría suspenderse o reprogramarse en caso de mal tiempo. Te recomendamos seguir nuestras redes sociales para estar al tanto.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary class="texto-condensado-semi-negrita">
+                                <i class="fas fa-paw"></i> ¿Puedo ir con mi mascota?
+                            </summary>
+                            <div class="faq-respuesta-contenido">
+                                <p class="texto-condensado-regular">¡Sí! El evento es pet-friendly, siempre y cuando tu mascota esté con correa y no cause molestias a otros asistentes.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                            <summary class="texto-condensado-semi-negrita">
+                                <i class="fas fa-calendar-alt"></i> ¿Cuándo y dónde es el evento?
+                            </summary>
+                            <div class="faq-respuesta-contenido">
+                                <p class="texto-condensado-regular">El Emúna Fest se llevará a cabo el Martes 23 de Diciembre de 2025 en Av. Cramer 3302, CABA, desde las 10:00 AM hasta las 8:00 PM.</p>
+                            </div>
+                        </details>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="emuna-club" class="seccion-club">
+            <div class="contenedor-club-barra">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3 class="texto-condensado-semi-negrita">
+                    <a href="mapa.html" style="color: inherit;">¡VENÍ A DISFRUTAR TUS MOMENTOS!</a>
+                </h3>
+            </div>
+            <div class="contenedor-club-contenido">
+                <h2 class="texto-condensado-negrita">Unite a EmunáClub</h2>
+                <p>Sé parte y obtén una tarjeta de fidelización con tus compras. Entérate de todas las novedades y los beneficios de pertenecer a nuestra comunidad.</p>
+                <button class="boton-cta texto-condensado-semi-negrita" onclick="window.location.href='contacto.html'">Suscribirse</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenido-pie">
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Cramer 3302, CABA</p>
+                <p><i class="fas fa-envelope"></i> info@emunacafear.com</p>
+                <p><i class="fas fa-phone-alt"></i> +54 9 11 5471-1820</p>
+            </div>
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Enlaces Rápidos</h4>
+                <ul class="enlaces-pie">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="historial.html">Historial</a></li>
+                    <li><a href="mapa.html">Ubicación</a></li>
+                    <li><a href="contacto.html">Contacto y FAQ</a></li>
+                </ul>
+            </div>
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Redes Sociales</h4>
+                <div class="social-pie">
+                    <a href="https://www.instagram.com/emunacafe.ba" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="pie-inferior">
+            <p>© 2025 Emúna Café & Pastelería. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

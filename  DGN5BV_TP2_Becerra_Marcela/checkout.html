@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout (Demostración de UX)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body class="checkout-page-layout">
+
+    <header>
+        <nav class="barra-navegacion">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/LogoEmuna.webp" alt="Logo Emúna Café & Pastelería" style="height: 40px;">
+                </a>
+            </div>
+            <ul id="nav-enlaces" class="enlaces-navegacion">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="historial.html">Historial</a></li>
+                <li><a href="mapa.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li>
+                    <a href="catalogo.html" class="nav-icon" title="Carrito de Compras">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="boton-hamburguesa" id="menu-toggle" aria-label="Abrir Menú"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <div class="checkout-wrapper">
+        <div class="progress-bar-wrapper">
+            <ul id="progressIndicator" class="progress-bar">
+                <li class="active" data-step="1">1. Contacto</li>
+                <li data-step="2">2. Envío</li>
+                <li data-step="3">3. Pago</li>
+                <li data-step="4">4. Confirmación</li>
+            </ul>
+        </div>
+
+        <form id="checkoutForm" class="single-column-form" novalidate>
+            
+            <div id="step-1" class="form-step active">
+                <h2>Información de Contacto</h2>
+                <div class="form-group">
+                    <label for="email">Email <span id="email-error" class="error-message"></span></label>
+                    <input type="email" id="email" name="email" value="cliente.recurrente@ejemplo.com" onblur="checkUserRegistration(this.value)" required>
+                    <div class="help-text">Ingresa tu email. Si ya eres cliente, aparecerá una opción para iniciar sesión.</div>
+                </div>
+                
+                <div id="login-prompt" class="login-prompt-wrapper hidden">
+                    <h4>👋 ¡Hola!</h4>
+                    <p>Parece que ya tienes cuenta. ¿Quieres iniciar sesión para usar tus datos guardados, o continuar como invitado?</p>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" name="login-password" placeholder="Ingresa tu contraseña" autocomplete="current-password">
+                        <div class="error-message" id="login-error"></div>
+                    </div>
+                    
+                    <div class="flex-row" style="margin-top: 1rem; justify-content: center;">
+                        <button type="button" class="btn-primary" onclick="loginUser()">Iniciar Sesión y Continuar</button>
+                        <button type="button" class="btn-secondary" onclick="continueAsGuest()">Continuar como Invitado</button>
+                    </div>
+                </div>
+                
+                <div id="guest-fields" class="hidden">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" value="Facundo Ivan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Apellido</label>
+                        <input type="text" id="lastname" name="lastname" value="Romero" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Contraseña (Registro)</label>
+                        <input type="password" id="new-password" name="new-password" oninput="updatePasswordStrength(this.value)" autocomplete="new-password">
+                        <meter max="4" id="password-strength-meter"></meter>
+                        <div id="password-strength-text" class="help-text">Mínimo 8 caracteres, mayúscula y un número (Opcional si no deseas registrarte).</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="step-2" class="form-step hidden">
+                <h2>Dirección de Envío</h2>
+                <div class="form-group">
+                    <label for="country">País</label>
+                    <select id="country" name="country" required>
+                        <option value="AR" selected>Argentina</option>
+                        <option value="CL">Chile</option>
+                        <option value="UY">Uruguay</option>
+                    </select> 
+                    <div class="help-text">País preseleccionado basado en tu ubicación.</div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Dirección (Calle y Nro)</label>
+                    <input type="text" id="address" name="address" value="Av. Libertador 1234, Piso 5" required>
+                    <div class="help-text">Consejo: Utiliza una herramienta de autocompletado para minimizar errores.</div>
+                </div>
+                <div class="form-group">
+                    <label for="city">Ciudad</label>
+                    <input type="text" id="city" name="city" value="CABA" required>
+                </div>
+                <div class="form-group">
+                    <label for="postal-code">Código Postal</label>
+                    <input type="text" id="postal-code" name="postal-code" value="C1425" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Número de Teléfono</label>
+                    <input type="tel" id="phone" name="phone" value="+54 9 11 5555-4444" required>
+                    <div class="help-text">Ejemplo: +54 9 11 4444 5555</div>
+                </div>
+            </div>
+            
+            <div id="step-3" class="form-step hidden">
+                <h2>Información de Pago</h2>
+                <div class="form-group">
+                    <label for="card-number">Número de Tarjeta <span id="card-logo" class="card-icon"></span></label>
+                    <input type="text" id="card-number" name="card-number" maxlength="19" oninput="formatCardNumber(this)" required>
+                    <div class="error-message" id="card-error"></div>
+                </div>
+                <div class="flex-row">
+                    <div class="form-group flex-item">
+                        <label for="expiry-date">Fecha de Expiración (MM/AA)</label>
+                        <input type="text" id="expiry-date" name="expiry-date" maxlength="5" oninput="formatExpiryDate(this)" placeholder="MM/AA" required>
+                    </div>
+                    <div class="form-group flex-item">
+                        <label for="cvv">CVV/CVC 
+                            <span class="help-icon" onclick="showCvvHelp(event)" title="Haga clic para ver dónde se encuentra el código.">?</span>
+                        </label>
+                        <input type="text" id="cvv" name="cvv" maxlength="4" required>
+                        <div id="cvv-help-message" class="help-text hidden" style="color: var(--color-primary); font-weight: 500;">
+                            El CVV (Código de Seguridad) es un código de 3 o 4 dígitos que se encuentra en la parte trasera (Visa/MC) o delantera (Amex) de tu tarjeta.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="step-4" class="form-step hidden">
+                <h2>Revisar y Confirmar</h2>
+                <p>Por favor, revise los detalles de su pedido y haga clic en **"Finalizar Compra"** para confirmar.</p>
+                <div id="summary-content" class="order-summary">
+                    <p>Cargando resumen del pedido...</p>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button type="button" id="prevBtn" class="btn-secondary hidden">← Atrás</button>
+                <button type="button" id="nextBtn" class="btn-primary">Siguiente</button>
+                <button type="submit" id="submitBtn" class="btn-primary hidden">Finalizar Compra</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="contenido-pie">
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Emuná Café</h4>
+                <p>Tu lugar de encuentro con la pastelería de autor.</p>
+            </div>
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Contacto</h4>
+                <p><i class="fas fa-marker-alt"></i> Av. Cramer 3302, CABA</p>
+                <p><i class="fas fa-phone-alt"></i> +54 9 11 5471-1820</p>
+            </div>
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Enlaces Rápidos</h4>
+                <ul class="enlaces-pie">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="historial.html">Historial</a></li>
+                </ul>
+            </div>
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Redes Sociales</h4>
+                <div class="social-pie">
+                    <a href="https://www.instagram.com/emunacafe.ba" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="pie-inferior">
+            <p>© 2025 Emuná Café & Pastelería | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

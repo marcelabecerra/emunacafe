@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación | Emuná Café & Pastelería</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> 
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+</head>
+<body>
+    <header>
+        <nav class="barra-navegacion">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/LogoEmuna-beige.webp" alt="Isologo de Emúna">
+                </a>
+            </div>
+            <ul class="enlaces-navegacion" id="nav-enlaces">
+                <li><a href="index.html" class="texto-condensado-semi-negrita">Inicio</a></li>
+                <li><a href="catalogo.html" class="texto-condensado-semi-negrita">Catálogo</a></li>
+                <li><a href="historial.html" class="texto-condensado-semi-negrita">Historial</a></li>
+                <li><a href="mapa.html" class="texto-condensado-semi-negrita">Ubicación</a></li>
+                <li><a href="contacto.html" class="texto-condensado-semi-negrita">Contacto</a></li>
+                
+                <li class="search-container" id="search-container">
+                    <input type="search" placeholder="Buscar productos..." class="search-input" id="search-input">
+                    <button class="search-button" aria-label="Buscar">
+                        <i class="fas fa-search nav-icon"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="catalogo.html" class="nav-icon" title="Carrito de Compras">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="boton-hamburguesa" id="menu-toggle" aria-label="Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="texto-condensado-negrita">Encuéntranos en Núñez, CABA</h2>
+            
+            <div class="contenedor-mapa-wrapper">
+                
+                <div class="columna-mapa">
+                    <h3 class="texto-condensado-semi-negrita">Nuestra Dirección</h3>
+                    <p class="texto-condensado-regular">Av. Cramer 3302, CABA, Argentina.</p>
+                    <div class="marco-mapa">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.875327891395!2d-58.4682024!3d-34.557452699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb59a2958f62f%3A0xc023c713b18544d6!2sAv.%20Cramer%203302%2C%20C1429%20CABA%2C%20Argentina!5e0!3m2!1ses-419!2s!4v1700000000000!5m2!1ses-419!2s" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de Emuná Café & Pastelería">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="columna-info-llegada">
+                    <h3 class="texto-condensado-semi-negrita">Cómo Llegar</h3>
+                    <p class="texto-condensado-regular">Estamos ubicados en una zona de fácil acceso con varias opciones de transporte público.</p>
+
+                    <div class="opcion-transporte">
+                        <i class="fas fa-bus"></i>
+                        <p class="texto-condensado-medio">Colectivos: Líneas 19, 71, 76, 114, 151, 169</p>
+                    </div>
+
+                    <div class="opcion-transporte">
+                        <i class="fas fa-train"></i>
+                        <p class="texto-condensado-medio">Tren: Estación Luis María Saavedra (Línea Mitre)</p>
+                    </div>
+
+                    <div class="opcion-transporte">
+                        <i class="fas fa-subway"></i>
+                        <p class="texto-condensado-medio">Subte: Estación Congreso de Tucumán (Línea D) - 15 min a pie.</p>
+                    </div>
+
+                    <div class="opcion-transporte">
+                        <i class="fas fa-walking"></i>
+                        <p class="texto-condensado-medio">A pie: A 10 minutos de la Plaza Castelli.</p>
+                    </div>
+
+                    <div class="texto-centrado mt-4">
+                        <a href="contacto.html" class="boton-secundario texto-condensado-semi-negrita">
+                            Planificar Ruta <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="emuna-club" class="seccion-club">
+            <div class="contenedor-club-barra">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3 class="texto-condensado-semi-negrita">
+                    <a href="mapa.html" style="color: inherit;">¡VENÍ A DISFRUTAR TUS MOMENTOS!</a>
+                </h3>
+            </div>
+            <div class="contenedor-club-contenido">
+                <h2 class="texto-condensado-negrita">Unite a EmunáClub</h2>
+                <p>Sé parte y obtén una tarjeta de fidelización con tus compras. Entérate de todas las novedades y los beneficios de pertenecer a nuestra comunidad.</p>
+                <button class="boton-cta texto-condensado-semi-negrita" onclick="window.location.href='contacto.html'">Suscribirse</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenido-pie">
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Cramer 3302, CABA</p>
+                <p><i class="fas fa-envelope"></i> info@emunacafear.com</p>
+                <p><i class="fas fa-phone-alt"></i> +54 9 11 5471-1820</p>
+            </div>
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Enlaces Rápidos</h4>
+                <ul class="enlaces-pie">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="historial.html">Historial</a></li>
+                    <li><a href="mapa.html">Ubicación</a></li>
+                    <li><a href="contacto.html">Contacto y FAQ</a></li>
+                </ul>
+            </div>
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Redes Sociales</h4>
+                <div class="social-pie">
+                    <a href="https://www.instagram.com/emunacafe.ba" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="pie-inferior">
+            <p>© 2025 Emuná Café & Pastelería. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

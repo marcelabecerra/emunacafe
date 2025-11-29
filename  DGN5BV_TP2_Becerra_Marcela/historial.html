@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Pedidos | Emuná Café & Pastelería</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css"> 
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+</head>
+<body>
+    <header>
+        <nav class="barra-navegacion">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/LogoEmuna-beige.webp" alt="Isologo de Emúna">
+                </a>
+            </div>
+            <ul class="enlaces-navegacion" id="nav-enlaces">
+                <li><a href="index.html" class="texto-condensado-semi-negrita">Inicio</a></li>
+                <li><a href="catalogo.html" class="texto-condensado-semi-negrita">Catálogo</a></li>
+                <li><a href="historial.html" class="texto-condensado-semi-negrita">Historial</a></li>
+                <li><a href="mapa.html" class="texto-condensado-semi-negrita">Ubicación</a></li>
+                <li><a href="contacto.html" class="texto-condensado-semi-negrita">Contacto</a></li>
+                
+                <li class="search-container" id="search-container">
+                    <input type="search" placeholder="Buscar productos..." class="search-input" id="search-input">
+                    <button class="search-button" aria-label="Buscar">
+                        <i class="fas fa-search nav-icon"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="catalogo.html" class="nav-icon" title="Carrito de Compras">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="boton-hamburguesa" id="menu-toggle" aria-label="Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="order-history-container">
+            <h2 class="texto-condensado-negrita">Mi Historial de Pedidos</h2>
+            <p class="texto-condensado-regular text-center mb-5">Aquí puedes ver el detalle y el estado de todas tus compras.</p>
+            
+            <div class="order-card">
+                <div class="order-id texto-condensado-negrita">#EMUNA-20251223</div>
+                <div class="order-details">
+                    <h4 class="texto-condensado-semi-negrita">Pedido del 23 Diciembre 2025</h4>
+                    <ul class="texto-condensado-regular">
+                        <li>3 x Torta Lilo, 1 x Espresso Clásico</li>
+                        <li>Dirección: Av. Cramer 3302 (Retiro en Local)</li>
+                    </ul>
+                </div>
+                <div class="order-actions">
+                    <p class="order-status-pending texto-condensado-negrita mb-2">Estado: Pendiente</p>
+                    <p class="texto-condensado-medio">Total: $15.000</p>
+                    <a href="checkout.html#step-1" class="boton-secundario texto-condensado-semi-negrita mt-2">Ver Detalles</a>
+                </div>
+            </div>
+
+            <div class="order-card">
+                <div class="order-id texto-condensado-negrita">#EMUNA-20251110</div>
+                <div class="order-details">
+                    <h4 class="texto-condensado-semi-negrita">Pedido del 10 Noviembre 2025</h4>
+                    <ul class="texto-condensado-regular">
+                        <li>1 x Cold Brew, 2 x Brownie de Chocolate</li>
+                        <li>Dirección: Calle Falsa 123 (Envío)</li>
+                    </ul>
+                </div>
+                <div class="order-actions">
+                    <p class="order-status-delivered texto-condensado-negrita mb-2">Estado: Entregado</p>
+                    <p class="texto-condensado-medio">Total: $11.700</p>
+                    <a href="#" class="boton-secundario texto-condensado-semi-negrita mt-2">Repetir Pedido</a>
+                </div>
+            </div>
+            
+            <div class="order-card">
+                <div class="order-id texto-condensado-negrita">#EMUNA-20251025</div>
+                <div class="order-details">
+                    <h4 class="texto-condensado-semi-negrita">Pedido del 25 Octubre 2025</h4>
+                    <ul class="texto-condensado-regular">
+                        <li>1 x Taza Logo, 5 x Medialuna de Manteca</li>
+                        <li>Dirección: Av. Cramer 3302 (Retiro en Local)</li>
+                    </ul>
+                </div>
+                <div class="order-actions">
+                    <p class="order-status-delivered texto-condensado-negrita mb-2">Estado: Entregado</p>
+                    <p class="texto-condensado-medio">Total: $11.000</p>
+                    <a href="#" class="boton-secundario texto-condensado-semi-negrita mt-2">Repetir Pedido</a>
+                </div>
+            </div>
+            
+            <div class="texto-centrado">
+                <a href="catalogo.html" class="boton-cta texto-condensado-semi-negrita">Realizar un Nuevo Pedido</a>
+            </div>
+        </section>
+
+        <section id="emuna-club" class="seccion-club">
+            <div class="contenedor-club-barra">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3 class="texto-condensado-semi-negrita">
+                    <a href="mapa.html" style="color: inherit;">¡VENÍ A DISFRUTAR TUS MOMENTOS!</a>
+                </h3>
+            </div>
+            <div class="contenedor-club-contenido">
+                <h2 class="texto-condensado-negrita">Unite a EmunáClub</h2>
+                <p>Sé parte y obtén una tarjeta de fidelización con tus compras. Entérate de todas las novedades y los beneficios de pertenecer a nuestra comunidad.</p>
+                <button class="boton-cta texto-condensado-semi-negrita" onclick="window.location.href='contacto.html'">Suscribirse</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenido-pie">
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Cramer 3302, CABA</p>
+                <p><i class="fas fa-envelope"></i> info@emunacafear.com</p>
+                <p><i class="fas fa-phone-alt"></i> +54 9 11 5471-1820</p>
+            </div>
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Enlaces Rápidos</h4>
+                <ul class="enlaces-pie">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="historial.html">Historial</a></li>
+                    <li><a href="mapa.html">Ubicación</a></li>
+                    <li><a href="contacto.html">Contacto y FAQ</a></li>
+                </ul>
+            </div>
+            <div class="seccion-pie">
+                <h4 class="texto-condensado-semi-negrita">Redes Sociales</h4>
+                <div class="social-pie">
+                    <a href="https://www.instagram.com/emunacafe.ba" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="pie-inferior">
+            <p>© 2025 Emuná Café & Pastelería. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
